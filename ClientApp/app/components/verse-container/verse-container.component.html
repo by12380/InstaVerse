@@ -1,0 +1,12 @@
+<div class="verse_box" style="border: red solid 1px">
+  <a href="javascript:;" data-toggle="modal" data-target="#delete_box" data-backdrop="static" data-keyboard="false" onclick="return setDeleteId(this)">
+    <img src="/Image/delete.svg" class="sm-delete-img" style="display: inline;">
+  </a>
+  <p style="clear:both; margin:0;"></p>
+  <div class="box_border" style="display: block;"></div>
+  <div>
+    <p *ngFor="let m of messages">
+      {{m}}
+    </p>
+  </div>
+</div>

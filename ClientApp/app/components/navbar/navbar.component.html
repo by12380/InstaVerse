@@ -1,0 +1,28 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand"><img src="/Image/logo.svg" class="logo"/></span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right" style="padding-right:5px;">
+                <li dropdown class="dropdown" 
+                    [isOpen]="status.isopen"
+                    (isOpenChange)="change($event)"
+                    (mouseover)="onMouseover()"
+                    (mouseleave)="onMouseleave()">
+                 <a dropdownToggle class="dropdown-toggle" href="javascript:;">Info</a>
+                 <ul *dropdownMenu class="dropdown-menu">
+                   <li><a>Verse Reference Examples</a></li>
+                   <li><a>Footnotes</a></li>
+                   <li><a>About</a></li>
+                 </ul>
+               </li>
+             </ul>
+        </div>
+    </div>
+</div>

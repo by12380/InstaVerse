@@ -1,0 +1,6 @@
+.add_verse_img, .study_sheet_img, .search_img, .delete_img, .done_img {
+    float: right;
+    height: 50px;
+    padding: 5px;
+    opacity: .7;
+}
