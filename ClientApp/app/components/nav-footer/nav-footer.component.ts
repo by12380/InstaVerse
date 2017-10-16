@@ -1,3 +1,4 @@
+import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavFooterComponent implements OnInit {
 
-  constructor() { }
+  isDeleteMode = false;
+
+  constructor(private studySheet: StudySheetService) {
+  }
 
   ngOnInit() {
+  }
+
+  newMessage() {
+    this.studySheet.changeMessage(["hi", "hello"]);
+  }
+
+  toggleMode(){
+    this.isDeleteMode = !this.isDeleteMode;
   }
 
 }

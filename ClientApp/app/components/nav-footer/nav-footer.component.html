@@ -1,7 +1,11 @@
 <nav class="navbar-fixed-bottom footer">
-    <a href="javascript:;"><img id="add_verse_btn" src="/Image/btn_add.svg" class="add_verse_img" style="display: none;"></a>
-    <a routerLink="studysheet"><img id="study_sheet_btn" src="/Image/study_sheet.svg" class="study_sheet_img"></a>
-    <a href="javascript:;"><img id="delete_btn" src="/Image/delete.svg" class="delete_img" style="display: none;"></a>
-    <a href="javascript:;"><img id="done_btn" src="/Image/done.svg" class="done_img" style="display: inline;"></a>
-    <a routerLink="home"><img id="search_btn" src="/Image/search.svg" class="search_img" style="display: inline;"></a>   
+    <div routerLinkActive="hidden">
+        <a (click)="newMessage()"><img id="add_verse_btn" src="/Image/btn_add.svg" class="add_verse_img"></a>
+        <a routerLink="studysheet"><img id="study_sheet_btn" src="/Image/study_sheet.svg" class="study_sheet_img"></a>
+    </div>
+    <div routerLinkActive="hidden">
+        <a (click)="toggleMode()" [class.hidden]="isDeleteMode"><img id="delete_btn" src="/Image/delete.svg" class="delete_img"></a>
+        <a (click)="toggleMode()" [class.hidden]="!isDeleteMode"><img id="done_btn" src="/Image/done.svg" class="done_img"></a>
+        <a routerLink="home"><img id="search_btn" src="/Image/search.svg" class="search_img"></a> 
+    </div>  
 </nav>

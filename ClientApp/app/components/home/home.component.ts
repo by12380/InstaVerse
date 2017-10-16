@@ -1,22 +1,18 @@
+import { trigger, style, animate, transition } from '@angular/animations';
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component } from '@angular/core';
+import { fade } from '../../animations/fade.animation';
 
 @Component({
     selector: 'home',
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    animations: [fade]
 })
 export class HomeComponent {
 
-    messageBox: Array<string>;
-
-    constructor(private studySheet: StudySheetService) { }
+    constructor() { }
 
     ngOnInit() {
-        this.studySheet.currentMessage.subscribe(messageBox => this.messageBox = messageBox);
-    }
-
-    newMessage() {
-        this.studySheet.changeMessage(["hi", "hello"]);
     }
 
 }

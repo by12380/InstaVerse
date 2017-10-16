@@ -33,8 +33,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
         BsDropdownModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'studysheet', component: StudysheetComponent },
+            { path: 'home', component: HomeComponent, data: { animation: 'home' } },
+            { path: 'studysheet', component: StudysheetComponent, data: { animation: 'studysheet' } },
             { path: 'versecontainer', component: VerseContainerComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
