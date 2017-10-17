@@ -1,5 +1,6 @@
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit, Input } from '@angular/core';
+import * as bootbox from 'bootbox';
 
 @Component({
   selector: 'verse-container',
@@ -16,7 +17,20 @@ export class VerseContainerComponent implements OnInit {
   }
 
   removeFromList(verseGroup: string[]) {
-    this.studySheetService.removeVerseGroup(verseGroup);
+    var confirmMessage: string;
+    var studySheetService = this.studySheetService;
+
+    if (verseGroup.length == 1) {
+      confirmMessage = 'Are you sure you want to delete this verse?';
+    } else {
+      confirmMessage = 'Are you sure you want to delete these ' + verseGroup.length + ' verses?';
+    }
+
+    bootbox.confirm(confirmMessage, function(result){
+      if(result){
+        studySheetService.removeVerseGroup(verseGroup);
+      }
+    })
   }
 
 }
