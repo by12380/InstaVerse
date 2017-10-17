@@ -6,6 +6,7 @@ import { fade } from '../../animations/fade.animation';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
     animations: [fade]
 })
 export class HomeComponent {

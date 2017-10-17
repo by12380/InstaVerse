@@ -1,18 +1,31 @@
 <div class="container-fluid" @fade>
-    <h1>Hello, world!</h1>
-    <p>Welcome to your new single-page application, built with:</p>
-    <ul>
-        <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-        <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-        <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>
-        <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-    </ul>
-    <p>To help you get started, we've also set up:</p>
-    <ul>
-        <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-        <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>
-        <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>
-        <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>
-        <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>
-    </ul>
+    <div id="search_page">
+        <br>
+        <br>
+        <div class="row">      
+        <div class="col-sm-2 col-md-2"></div>
+        <div class="col-sm-8 col-md-8 text-center">
+            <div id="textarea" class="txt-area" contenteditable="true"></div>
+            <br />
+            <div id="MainContent_inputerror" class="inputerror"></div>
+            <br />         
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="srch-block">
+                        <input type="button" value="Search" class="btn btn-primary btn-sm" id="btn-srch">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="checkbox-inline chkbox-div">
+                        <span><input id="chk_footnote" type="checkbox">Footnotes</span>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <div class="col-sm-2 col-md-2"></div>
+        </div>
+        <br>
+    </div>
+    <div id="mainContent"><div>
 </div>
