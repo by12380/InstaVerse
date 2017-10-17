@@ -1,4 +1,14 @@
 .sm-delete-img {
     height: 30px;
     float: right;
+    cursor: pointer;
+}
+
+.clear-float {
+    clear:both;
+    margin:0;
+}
+
+.verse-container {
+    border: red solid 1px;
 }

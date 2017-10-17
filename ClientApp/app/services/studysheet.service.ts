@@ -4,14 +4,20 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class StudySheetService {
 
-private messageBox: Array<string>;
-private messageSource = new BehaviorSubject<Array<string>>(this.messageBox);
-public currentMessage = this.messageSource.asObservable();
+private verseGroupList: string[][] = [];
+private source = new BehaviorSubject<string[][]>(this.verseGroupList);
+public currentMessage = this.source.asObservable();
 
 constructor() { }
 
-changeMessage(messageBox: Array<string>) {
-    this.messageSource.next(messageBox);
+addVerseGroup(verseGroup: string[]) {
+    this.verseGroupList.push(verseGroup);
+    this.source.next(this.verseGroupList);
+}
+
+removeVerseGroup(verseGroup: string[]){
+    let index = this.verseGroupList.indexOf(verseGroup);
+    this.verseGroupList.splice(index, 1);
 }
 
 }

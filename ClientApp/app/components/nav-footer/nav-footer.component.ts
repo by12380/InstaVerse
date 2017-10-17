@@ -17,7 +17,7 @@ export class NavFooterComponent implements OnInit {
   }
 
   newMessage() {
-    this.studySheet.changeMessage(["hi", "hello"]);
+    this.studySheet.addVerseGroup(["hi", "hello"]);
   }
 
   toggleMode(){

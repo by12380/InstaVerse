@@ -10,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudysheetComponent implements OnInit {
 
-  messageBox: Array<string> = [];
+  verseGroupList: string[][] = [];
 
-  constructor(private studySheet: StudySheetService) { }
+  constructor(private studySheetService: StudySheetService) {
+    
+  }
 
   ngOnInit() {
-    this.studySheet.currentMessage.subscribe(messageBox => this.messageBox = messageBox);
+    this.studySheetService.currentMessage.subscribe(verseGroupList => this.verseGroupList = verseGroupList);
   }
 
 }

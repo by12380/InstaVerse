@@ -1,3 +1,4 @@
+import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,11 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VerseContainerComponent implements OnInit {
 
-  @Input() messages: Array<string>;
+  @Input() verseGroup: string[];
 
-  constructor() { }
+  constructor(private studySheetService: StudySheetService) { }
 
   ngOnInit() {
+  }
+
+  removeFromList(verseGroup: string[]) {
+    this.studySheetService.removeVerseGroup(verseGroup);
   }
 
 }

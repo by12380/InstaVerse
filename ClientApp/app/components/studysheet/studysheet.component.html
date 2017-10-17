@@ -18,5 +18,5 @@
   </div>
   <br />
   <br />
-  <verse-container [messages]="messageBox" class="verse-container-margin"></verse-container>
+  <verse-container *ngFor="let group of verseGroupList" [verseGroup]="group" class="verse-container-margin"></verse-container>
 </div>
