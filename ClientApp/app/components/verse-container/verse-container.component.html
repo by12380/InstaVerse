@@ -1,12 +1,15 @@
-<div class="verse-container">
-  <a (click)="removeFromList(verseGroup)">
-    <img src="/Image/delete.svg" class="sm-delete-img">
-  </a>
+<div id="verseContainer">
+  <div *ngIf="isDeleteMode" @fade>
+    <a (click)="removeFromList()">
+      <img src="/Image/delete.svg" class="sm-delete-img">
+    </a>
+  </div>
+  
   <p class="clear-float"></p>
-
   <div>
     <p *ngFor="let verse of verseGroup">
       {{verse}}
     </p>
   </div>
+  <div *ngIf="isDeleteMode" id="containerBorder" class="red-border" @fade></div>
 </div>

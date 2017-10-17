@@ -8,20 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavFooterComponent implements OnInit {
 
-  isDeleteMode = false;
+  isDeleteMode: boolean;
 
-  constructor(private studySheet: StudySheetService) {
+  constructor(private studySheetService: StudySheetService) {
+    this.studySheetService.isDeleteMode.subscribe(isDeleteMode => this.isDeleteMode = isDeleteMode);
   }
 
   ngOnInit() {
   }
 
   newMessage() {
-    this.studySheet.addVerseGroup(["hi", "hello"]);
+    this.studySheetService.addVerseGroup(["hi", "hello"]);
   }
 
-  toggleMode(){
-    this.isDeleteMode = !this.isDeleteMode;
+  activateDeleteMode() {
+    this.studySheetService.activateDeleteMode();
+  }
+
+  escapeDeleteMode() {
+    this.studySheetService.escapeDeleteMode();
   }
 
 }

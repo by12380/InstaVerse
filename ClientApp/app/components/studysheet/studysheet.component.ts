@@ -10,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudysheetComponent implements OnInit {
 
+  isDeleteMode: boolean;
   verseGroupList: string[][] = [];
 
   constructor(private studySheetService: StudySheetService) {
-    
   }
 
   ngOnInit() {
-    this.studySheetService.currentMessage.subscribe(verseGroupList => this.verseGroupList = verseGroupList);
+    this.studySheetService.currentMessage
+      .subscribe(verseGroupList => this.verseGroupList = verseGroupList);
+    
+    this.studySheetService.isDeleteMode
+      .subscribe(isDeleteMode => this.isDeleteMode = isDeleteMode);
+
   }
 
 }

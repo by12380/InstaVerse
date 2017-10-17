@@ -1,5 +1,6 @@
 .sm-delete-img {
-    height: 30px;
+    height: 35px;
+    width: 35px;
     float: right;
     cursor: pointer;
 }
@@ -9,6 +10,20 @@
     margin:0;
 }
 
-.verse-container {
+#verseContainer {
+    padding: 5px;
+    position: relative;
+}
+
+#containerBorder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+.red-border {
     border: red solid 1px;
 }
