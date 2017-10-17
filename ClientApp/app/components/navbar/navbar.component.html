@@ -17,9 +17,9 @@
                     (mouseleave)="onMouseleave()">
                  <a dropdownToggle class="dropdown-toggle" href="javascript:;">Info</a>
                  <ul *dropdownMenu class="dropdown-menu">
-                   <li><a>Verse Reference Examples</a></li>
-                   <li><a>Footnotes</a></li>
-                   <li><a>About</a></li>
+                   <li><a (click)="openVerseRef()">Verse Reference Examples</a></li>
+                   <li><a (click)="openFootnote()">Footnotes</a></li>
+                   <li><a (click)="openAbout()">About</a></li>
                  </ul>
                </li>
              </ul>
