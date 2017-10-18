@@ -3,9 +3,11 @@
         <br>
         <br>
         <div class="row">      
-        <div class="col-sm-2 col-md-2"></div>
-        <div class="col-sm-8 col-md-8 text-center">
-            <div id="textarea" class="txt-area" contenteditable="true"></div>
+        <div class="col-sm-3 col-md-3"></div>
+        <div class="col-sm-6 col-md-6 text-center">
+            <div class="form-group">
+                <textarea #searchBox class="form-control txt-area" rows="5" id="comment"></textarea>
+            </div>
             <br />
             <div id="MainContent_inputerror" class="inputerror"></div>
             <br />         
@@ -13,7 +15,7 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <div class="srch-block">
-                        <input type="button" value="Search" class="btn btn-primary btn-sm" id="btn-srch">
+                        <input (click)="search(searchBox.value)" type="button" value="Search" class="btn btn-primary btn-sm">
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -23,7 +25,7 @@
                 </div>
             </div>
         </div>      
-        <div class="col-sm-2 col-md-2"></div>
+        <div class="col-sm-3 col-md-3"></div>
         </div>
         <br>
     </div>

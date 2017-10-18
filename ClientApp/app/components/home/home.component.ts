@@ -1,3 +1,4 @@
+import { VerseParserService } from './../../services/verse-parser.service';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component } from '@angular/core';
@@ -11,9 +12,13 @@ import { fade } from '../../animations/fade.animation';
 })
 export class HomeComponent {
 
-    constructor() { }
+    constructor(private verseParserService: VerseParserService) { }
 
     ngOnInit() {
+    }
+
+    search(str: string){
+        this.verseParserService.getVerses(str);
     }
 
 }
