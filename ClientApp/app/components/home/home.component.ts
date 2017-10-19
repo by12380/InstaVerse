@@ -17,8 +17,8 @@ export class HomeComponent {
     ngOnInit() {
     }
 
-    search(str: string){
-        this.verseParserService.getVerses(str);
+    fetch(str: string){
+        this.verseParserService.getVerses(str).subscribe(res => console.log(res));
     }
 
 }

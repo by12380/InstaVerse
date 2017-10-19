@@ -1,15 +1,28 @@
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+import { URLSearchParams } from '@angular/http';
 
 @Injectable()
 export class VerseParserService {
 
-    constructor() { }
+    private readonly apiGetUrl = "api/Scriptures/Get";
 
-    public getVerses(verseReferences: string){
-        console.log(this.verseFormatter(verseReferences));
+    constructor(private http: Http) { }
+
+    public getVerses(rawVerseRefs: string){
+
+        let params = new URLSearchParams();
+        let collection: string[] = this.verseParser(rawVerseRefs);
+
+        for(let v of collection){
+            params.append('verses', v);
+        }
+
+        return this.http.get(this.apiGetUrl, {search: params}).map(res => res.json());
     }
 
-    private verseFormatter(str: string): string[] {
+    private verseParser(str: string): string[] {
         let verse_list = [];
 
         if (!/[A-z]/.test(str)) {

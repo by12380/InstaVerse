@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaVerse.Controllers
@@ -9,10 +12,82 @@ namespace InstaVerse.Controllers
     [Route("api/[controller]")]
     public class ScripturesController : Controller
     {
+        private string errorList = null;
+        
         [HttpGet("[action]")]
-        public IEnumerable<string> Test(List<string> s) {
+        public IEnumerable<string> Get(List<string> verses) {
+            
+            List<string> verseCollection = new List<string>();
+            List<string> errorList = new List<string>();
 
-            return s;
+            foreach(string v in verses){
+                try {
+                    verseCollection = verseCollection.Concat(parse(v)).ToList();
+                }
+                catch(ScriptureNotFoundException e) {
+                    errorList.Add(e.Message);
+                }
+            }
+
+            return verseCollection;
+        }
+
+        private IEnumerable<string> parse(string verseRef) {
+
+            string link;
+            List<string> verseCollection = new List<string>();
+
+            if (verseRef.Split(':')[0].Contains('-'))
+            {
+                throw new ScriptureNotFoundException(verseRef);
+            }
+
+
+            var dic = new Dictionary<string, string>();
+            dic.Add("scriptureString", verseRef);
+
+            var data = new FormUrlEncodedContent(dic);
+
+            using (HttpClient client = new HttpClient())
+            using (HttpResponseMessage response = client.PostAsync("http://online.recoveryversion.bible/GetScripture.asp", data).Result)
+            {
+
+                link = response.RequestMessage.RequestUri.ToString();
+                if (link.Contains("fcid=0") || link.Contains("lcid=0") || link.Contains("fvid=0") || link.Contains("lvid=0"))
+                {
+                    throw new ScriptureNotFoundException(verseRef);
+                }
+
+            }
+
+
+            var html = new HtmlDocument();
+            html.LoadHtml(new WebClient().DownloadString(link));
+            var root = html.DocumentNode;
+            var anchors = root.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("verses"));
+
+
+            foreach (HtmlNode n in anchors)
+            {
+                fixLink(n);
+                string verse = ("<strong>" + verseRef.Split(':')[0] + ":</strong>");
+                verse += n.InnerHtml.ToString();
+                verse = verse.Replace("\r\n\t\t\t", "");
+                verseCollection.Add(verse);
+            }
+
+            return verseCollection;
+        }
+
+        private void fixLink(HtmlNode n) {
+
+            if(n.SelectNodes("//sup/a") == null)
+                return;
+
+            foreach(HtmlNode a in n.SelectNodes("//sup/a")) {
+                a.SetAttributeValue("href",
+                    "http://online.recoveryversion.bible/" + a.Attributes["href"].Value);
+            }
         }
     }
 }
