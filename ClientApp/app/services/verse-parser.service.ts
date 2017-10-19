@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
@@ -7,10 +8,13 @@ import { URLSearchParams } from '@angular/http';
 export class VerseParserService {
 
     private readonly apiGetUrl = "api/Scriptures/Get";
+    private verseList: string[]= [];
+    private verseListSource = new BehaviorSubject<string[]>(this.verseList);
+    public latestVerses = this.verseListSource.asObservable();
 
     constructor(private http: Http) { }
 
-    public getVerses(rawVerseRefs: string){
+    public fetchVerses(rawVerseRefs: string){
 
         let params = new URLSearchParams();
         let collection: string[] = this.verseParser(rawVerseRefs);
@@ -19,7 +23,9 @@ export class VerseParserService {
             params.append('verses', v);
         }
 
-        return this.http.get(this.apiGetUrl, {search: params}).map(res => res.json());
+        this.http.get(this.apiGetUrl, {search: params})
+            .map(res => res.json())
+            .subscribe(res => this.verseListSource.next(res));
     }
 
     private verseParser(str: string): string[] {

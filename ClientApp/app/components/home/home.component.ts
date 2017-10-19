@@ -12,13 +12,16 @@ import { fade } from '../../animations/fade.animation';
 })
 export class HomeComponent {
 
+    public verses: string[] = [];
+
     constructor(private verseParserService: VerseParserService) { }
 
     ngOnInit() {
+        this.verseParserService.latestVerses.subscribe(verses => this.verses = verses);
     }
 
     fetch(str: string){
-        this.verseParserService.getVerses(str).subscribe(res => console.log(res));
+        this.verseParserService.fetchVerses(str);
     }
 
 }

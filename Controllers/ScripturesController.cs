@@ -42,7 +42,6 @@ namespace InstaVerse.Controllers
                 throw new ScriptureNotFoundException(verseRef);
             }
 
-
             var dic = new Dictionary<string, string>();
             dic.Add("scriptureString", verseRef);
 
@@ -59,7 +58,6 @@ namespace InstaVerse.Controllers
                 }
 
             }
-
 
             var html = new HtmlDocument();
             html.LoadHtml(new WebClient().DownloadString(link));
@@ -81,12 +79,19 @@ namespace InstaVerse.Controllers
 
         private void fixLink(HtmlNode n) {
 
-            if(n.SelectNodes("//sup/a") == null)
-                return;
+            const string domainUrl = "http://online.recoveryversion.bible/";
+
+            if(n.SelectNodes("//sup/a") == null) return;
 
             foreach(HtmlNode a in n.SelectNodes("//sup/a")) {
-                a.SetAttributeValue("href",
-                    "http://online.recoveryversion.bible/" + a.Attributes["href"].Value);
+
+                //Links open on new page
+                a.Attributes.Add("target", "_blank");
+
+                //Append domain url to link if not present
+                string hrefValue = a.Attributes["href"].Value;
+                if(!hrefValue.Contains(domainUrl))
+                    a.SetAttributeValue("href", domainUrl + hrefValue);
             }
         }
     }

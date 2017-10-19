@@ -29,5 +29,7 @@
         </div>
         <br>
     </div>
-    <div id="mainContent"><div>
+    <div id="mainContent">
+        <div *ngFor="let v of verses" [innerHtml]="v"></div>
+    <div>
 </div>
