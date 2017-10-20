@@ -1,5 +1,6 @@
+import { VerseParserService } from './../../services/verse-parser.service';
 import { StudySheetService } from './../../services/studysheet.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'nav-footer',
@@ -8,17 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavFooterComponent implements OnInit {
 
-  isDeleteMode: boolean;
+  @Output() addToStudySeetEvent = new EventEmitter<string>();
+  private verses: string[] = [];
+  public isDeleteMode: boolean;
 
-  constructor(private studySheetService: StudySheetService) {
+  constructor(
+      private studySheetService: StudySheetService,
+      private verseParserService: VerseParserService) {
     this.studySheetService.isDeleteMode.subscribe(isDeleteMode => this.isDeleteMode = isDeleteMode);
+    this.verseParserService.latestVerses.subscribe(verses => this.verses = verses);
   }
 
   ngOnInit() {
   }
 
-  newMessage() {
-    this.studySheetService.addVerseGroup(["hi", "hello"]);
+  addToSheet() {
+    this.studySheetService.addVerseGroup(this.verses);
+    this.addToStudySeetEvent.emit();
   }
 
   activateDeleteMode() {

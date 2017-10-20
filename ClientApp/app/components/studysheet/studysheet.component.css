@@ -6,3 +6,8 @@
 .verse-container-margin {
     margin: 1px;
 }
+
+#MainContainer {
+    margin: auto;
+    width: 80%;
+}

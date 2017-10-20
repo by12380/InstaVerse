@@ -18,5 +18,7 @@
   </div>
   <br />
   <br />
-  <verse-container *ngFor="let group of verseGroupList" [verseGroup]="group" [isDeleteMode]="isDeleteMode" class="verse-container-margin"></verse-container>
+</div>
+<div id="MainContainer">
+        <verse-container *ngFor="let verses of verseGroupList" [verseGroup]="verses" [isDeleteMode]="isDeleteMode" class="verse-container-margin"></verse-container>
 </div>
