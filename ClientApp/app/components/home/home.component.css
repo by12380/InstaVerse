@@ -6,3 +6,9 @@
     margin: auto;
     width: 80%;
 }
+
+.chkbox-div {
+    padding-top: 5px;
+    margin: auto;
+    font-size: small;
+}

@@ -2,3 +2,25 @@
     height: 25px;
     opacity: 0.8;
 }
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #376bbf !important;
+    cursor: pointer;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #376bbf !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #376bbf !important;
+}

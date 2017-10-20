@@ -1,4 +1,23 @@
-.study-sheet-placement {
+@media (min-width: 768px){
+    .chkbox-div-st {
+        margin-top: 55px;
+    }
+}
+
+.chkbox-div-st {
+    font-size: small;
+}
+
+#MainContainer {
+    margin: auto;
+    width: 80%;
+}
+
+.studysheet-icon {
+    height:80px
+}
+
+.studysheet-placement {
     margin-top: 20px;
     width: 80%;
 }
@@ -7,7 +26,3 @@
     margin: 1px;
 }
 
-#MainContainer {
-    margin: auto;
-    width: 80%;
-}
