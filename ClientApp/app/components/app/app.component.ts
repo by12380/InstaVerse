@@ -1,3 +1,4 @@
+import { VerseParserService } from './../../services/verse-parser.service';
 import { fade } from './../../animations/fade.animation';
 import { NavbarComponent } from './../navbar/navbar.component';
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
@@ -10,7 +11,13 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 })
 export class AppComponent {
 
+    isLoading: boolean =  false;
     isVisible: boolean = false;
+
+    constructor(private verseParserService: VerseParserService) {
+        this.verseParserService.isLoading.subscribe(isLoading => this.isLoading = isLoading);
+    }
+
     onAddToStudySheet(){
         this.isVisible = true;
         setTimeout(() => {  

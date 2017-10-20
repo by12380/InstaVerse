@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -31,6 +32,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
         CommonModule,
         HttpModule,
         FormsModule,
+        MatProgressSpinnerModule,
         BsDropdownModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -8,13 +8,21 @@ import { URLSearchParams } from '@angular/http';
 export class VerseParserService {
 
     private readonly apiGetUrl = "api/Scriptures/Get";
+
     private verseList: string[]= [];
     private verseListSource = new BehaviorSubject<string[]>(this.verseList);
     public latestVerses = this.verseListSource.asObservable();
 
+    private loadProgress: boolean = false;
+    private loadProgressSource = new BehaviorSubject<boolean>(this.loadProgress);
+    public isLoading = this.loadProgressSource.asObservable();
+
+
     constructor(private http: Http) { }
 
     public fetchVerses(rawVerseRefs: string){
+
+        this.loadProgressSource.next(true);
 
         let params = new URLSearchParams();
         let collection: string[] = this.verseParser(rawVerseRefs);
@@ -25,7 +33,10 @@ export class VerseParserService {
 
         this.http.get(this.apiGetUrl, {search: params})
             .map(res => res.json())
-            .subscribe(res => this.verseListSource.next(res));
+            .subscribe(res => {
+                this.verseListSource.next(res);
+                this.loadProgressSource.next(false);
+            });
     }
 
     private verseParser(str: string): string[] {

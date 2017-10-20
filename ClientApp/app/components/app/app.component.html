@@ -5,7 +5,12 @@
     </div>
 </div>
 <nav-footer (addToStudySeetEvent)="onAddToStudySheet()"></nav-footer>
+
 <div *ngIf="isVisible" id="check_div" class="text-center" @fade>        
     <p class="check-word">Added to Studysheet</p>
     <img src="/Image/check.svg" class="check-logo">
+</div>
+
+<div *ngIf="isLoading" id="ajax_bg">
+    <mat-spinner [diameter]="50" class="ajax-loader"></mat-spinner>
 </div>
