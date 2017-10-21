@@ -24,6 +24,7 @@ export class NavFooterComponent implements OnInit {
   }
 
   addToSheet() {
+    if (this.verses.length == 0) return;
     this.studySheetService.addVerseGroup(this.verses);
     this.addToStudySeetEvent.emit();
   }
