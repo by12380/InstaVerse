@@ -31,9 +31,14 @@ export class VerseContainerComponent implements OnInit {
       confirmMessage = 'Are you sure you want to delete these ' + verseGroup.length + ' verses?';
     }
 
-    bootbox.confirm(confirmMessage, function(result){
-      if(result){
-        studySheetService.removeVerseGroup(verseGroup);
+    bootbox.confirm({
+      message: confirmMessage,
+      size: 'small',
+      callback:
+      function(result){
+        if(result){
+          studySheetService.removeVerseGroup(verseGroup);
+        }
       }
     })
   }
