@@ -92,6 +92,9 @@ namespace InstaVerse.Controllers
                 string hrefValue = a.Attributes["href"].Value;
                 if(!hrefValue.Contains(domainUrl))
                     a.SetAttributeValue("href", domainUrl + hrefValue);
+
+                //Hide link by default
+                a.SetAttributeValue("class", "hidden");
             }
         }
     }
