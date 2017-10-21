@@ -14,13 +14,13 @@ import * as $ from 'jquery';
 export class HomeComponent {
 
     public verses: string[] = [];
+    public errorStrings: string[] = [];
 
     constructor(private verseParserService: VerseParserService) { }
 
     ngOnInit() {
-        this.verseParserService.latestVerses.subscribe(verses => {
-            this.verses = verses;
-        });
+        this.verseParserService.latestVerses.subscribe(verses => this.verses = verses);
+        this.verseParserService.latestErrors.subscribe(errorStrings => this.errorStrings = errorStrings);
     }
 
     fetch(str: string){

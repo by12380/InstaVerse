@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using InstaVerse.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaVerse.Controllers
@@ -15,21 +16,26 @@ namespace InstaVerse.Controllers
         private string errorList = null;
         
         [HttpGet("[action]")]
-        public IEnumerable<string> Get(List<string> verses) {
+        public IActionResult Get(List<string> verses) {
             
             List<string> verseCollection = new List<string>();
-            List<string> errorList = new List<string>();
+            List<string> errorStrings = new List<string>();
 
             foreach(string v in verses){
                 try {
                     verseCollection = verseCollection.Concat(parse(v)).ToList();
                 }
                 catch(ScriptureNotFoundException e) {
-                    errorList.Add(e.Message);
+                    errorStrings.Add(e.Message);
                 }
             }
 
-            return verseCollection;
+            ScriptureResource resource = new ScriptureResource(){
+                verseCollection = verseCollection,
+                errorStrings = errorStrings
+            };
+
+            return Ok(resource);
         }
 
         private IEnumerable<string> parse(string verseRef) {

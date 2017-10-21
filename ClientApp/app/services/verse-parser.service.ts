@@ -1,3 +1,4 @@
+import { ScriptureResource } from './../models/ScriptureResource';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
@@ -12,6 +13,10 @@ export class VerseParserService {
     private verseList: string[]= [];
     private verseListSource = new BehaviorSubject<string[]>(this.verseList);
     public latestVerses = this.verseListSource.asObservable();
+
+    private errorStrings: string[]= [];
+    private errorStringsSource = new BehaviorSubject<string[]>(this.errorStrings);
+    public latestErrors = this.errorStringsSource.asObservable();
 
     private loadProgress: boolean = false;
     private loadProgressSource = new BehaviorSubject<boolean>(this.loadProgress);
@@ -32,9 +37,10 @@ export class VerseParserService {
         }
 
         this.http.get(this.apiGetUrl, {search: params})
-            .map(res => res.json())
-            .subscribe(res => {
-                this.verseListSource.next(res);
+            .map(res => res.json() as ScriptureResource)
+            .subscribe(resource => {
+                this.verseListSource.next(resource.verseCollection);
+                this.errorStringsSource.next(resource.errorStrings);
                 this.loadProgressSource.next(false);
             });
     }

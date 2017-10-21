@@ -9,7 +9,10 @@
                 <textarea #searchBox class="form-control txt-area" rows="5" id="comment"></textarea>
             </div>
             <br />
-            <div id="MainContent_inputerror" class="inputerror"></div>
+            <div *ngIf="errorStrings?.length > 0" class="input-error">
+                    Input Errors:
+                    <span *ngFor="let e of errorStrings">{{e}}; </span>
+                </div>
             <br />         
             <div class="row">
                 <div class="col-sm-4"></div>
