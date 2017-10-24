@@ -10,13 +10,12 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" style="padding-right:5px;">
-                <li dropdown class="dropdown" 
-                    [isOpen]="status.isopen"
-                    (isOpenChange)="change($event)"
+                <li class="dropdown"
                     (mouseover)="onMouseover()"
-                    (mouseleave)="onMouseleave()">
-                 <a dropdownToggle class="dropdown-toggle" href="javascript:;">Info</a>
-                 <ul *dropdownMenu class="dropdown-menu">
+                    (mouseleave)="onMouseleave()"
+                    >
+                 <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">Info</a>
+                 <ul class="dropdown-menu">
                    <li><a (click)="openVerseRef()">Verse Reference Examples</a></li>
                    <li><a (click)="openFootnote()">Footnotes</a></li>
                    <li><a (click)="openAbout()">About</a></li>
