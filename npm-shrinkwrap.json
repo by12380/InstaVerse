@@ -2772,11 +2772,6 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "dev": true
     },
-    "ngx-bootstrap": {
-      "version": "1.9.3",
-      "from": "ngx-bootstrap@latest",
-      "resolved": "https://registry.npmjs.org/ngx-bootstrap/-/ngx-bootstrap-1.9.3.tgz"
-    },
     "no-case": {
       "version": "2.3.1",
       "from": "no-case@>=2.2.0 <3.0.0",
