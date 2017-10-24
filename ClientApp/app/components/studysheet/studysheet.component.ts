@@ -33,7 +33,7 @@ export class StudysheetComponent implements OnInit {
       } else {
           $("#MainContainer").find("sup a").addClass("hidden");
       }
-  })
+    })
   }
 
 }
