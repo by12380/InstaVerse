@@ -29,13 +29,13 @@ export class HomeComponent {
 
     ngAfterViewInit() {
         //Toggle footnotes
-        $("#chk_footnote").change(function () {
-            if ($("#chk_footnote").prop("checked")) {
-                $("#MainContainer").find("sup a").removeClass("hidden");
-            } else {
-                $("#MainContainer").find("sup a").addClass("hidden");
-            }
-        })
+        // $("#chk_footnote").change(function () {
+        //     if ($("#chk_footnote").prop("checked")) {
+        //         $("#MainContainer").find("sup a").removeClass("hidden");
+        //     } else {
+        //         $("#MainContainer").find("sup a").addClass("hidden");
+        //     }
+        // })
     }
 
 }
