@@ -3,24 +3,24 @@
   "version": "0.0.0",
   "dependencies": {
     "@angular/animations": {
-      "version": "4.4.4",
-      "from": "@angular/animations@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/animations@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.2.5.tgz"
     },
     "@angular/common": {
-      "version": "4.4.4",
-      "from": "@angular/common@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/common/-/common-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/common@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-4.2.5.tgz"
     },
     "@angular/compiler": {
-      "version": "4.4.4",
-      "from": "@angular/compiler@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/compiler@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-4.2.5.tgz"
     },
     "@angular/compiler-cli": {
-      "version": "4.4.4",
-      "from": "@angular/compiler-cli@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.4.4.tgz",
+      "version": "4.2.5",
+      "from": "@angular/compiler-cli@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.2.5.tgz",
       "dependencies": {
         "minimist": {
           "version": "1.2.0",
@@ -30,44 +30,44 @@
       }
     },
     "@angular/core": {
-      "version": "4.4.4",
-      "from": "@angular/core@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/core@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.2.5.tgz"
     },
     "@angular/forms": {
-      "version": "4.4.4",
-      "from": "@angular/forms@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/forms@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-4.2.5.tgz"
     },
     "@angular/http": {
-      "version": "4.4.4",
-      "from": "@angular/http@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/http/-/http-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/http@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/http/-/http-4.2.5.tgz"
     },
     "@angular/platform-browser": {
-      "version": "4.4.4",
-      "from": "@angular/platform-browser@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/platform-browser@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.2.5.tgz"
     },
     "@angular/platform-browser-dynamic": {
-      "version": "4.4.4",
-      "from": "@angular/platform-browser-dynamic@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/platform-browser-dynamic@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.2.5.tgz"
     },
     "@angular/platform-server": {
-      "version": "4.4.4",
-      "from": "@angular/platform-server@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/platform-server@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.2.5.tgz"
     },
     "@angular/router": {
-      "version": "4.4.4",
-      "from": "@angular/router@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/router/-/router-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/router@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-4.2.5.tgz"
     },
     "@angular/tsc-wrapped": {
-      "version": "4.4.4",
-      "from": "@angular/tsc-wrapped@4.4.4",
-      "resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.4.4.tgz"
+      "version": "4.2.5",
+      "from": "@angular/tsc-wrapped@4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.2.5.tgz"
     },
     "@ngtools/webpack": {
       "version": "1.5.0",
@@ -4010,9 +4010,9 @@
       }
     },
     "tslib": {
-      "version": "1.7.1",
+      "version": "1.8.0",
       "from": "tslib@>=1.7.1 <2.0.0",
-      "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.7.1.tgz"
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.8.0.tgz"
     },
     "tty-browserify": {
       "version": "0.0.0",
