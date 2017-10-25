@@ -7,11 +7,6 @@
       "from": "@angular/animations@4.4.4",
       "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.4.4.tgz"
     },
-    "@angular/cdk": {
-      "version": "2.0.0-beta.12",
-      "from": "https://registry.npmjs.org/@angular/cdk/-/cdk-2.0.0-beta.12.tgz",
-      "resolved": "https://registry.npmjs.org/@angular/cdk/-/cdk-2.0.0-beta.12.tgz"
-    },
     "@angular/common": {
       "version": "4.4.4",
       "from": "@angular/common@4.4.4",
@@ -48,11 +43,6 @@
       "version": "4.4.4",
       "from": "@angular/http@4.4.4",
       "resolved": "https://registry.npmjs.org/@angular/http/-/http-4.4.4.tgz"
-    },
-    "@angular/material": {
-      "version": "2.0.0-beta.12",
-      "from": "https://registry.npmjs.org/@angular/material/-/material-2.0.0-beta.12.tgz",
-      "resolved": "https://registry.npmjs.org/@angular/material/-/material-2.0.0-beta.12.tgz"
     },
     "@angular/platform-browser": {
       "version": "4.4.4",

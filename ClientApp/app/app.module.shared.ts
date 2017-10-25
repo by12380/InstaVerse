@@ -10,8 +10,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MatProgressSpinnerModule } from '@angular/material';
-
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
@@ -31,7 +29,6 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
         CommonModule,
         HttpModule,
         FormsModule,
-        MatProgressSpinnerModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent, data: { animation: 'home' } },
