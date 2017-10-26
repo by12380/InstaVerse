@@ -1,7 +1,7 @@
 import { fade } from './../../animations/fade.animation';
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-studysheet',

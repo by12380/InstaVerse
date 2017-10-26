@@ -100,7 +100,7 @@
     },
     "@types/jquery": {
       "version": "3.2.14",
-      "from": "@types/jquery@*",
+      "from": "https://registry.npmjs.org/@types/jquery/-/jquery-3.2.14.tgz",
       "resolved": "https://registry.npmjs.org/@types/jquery/-/jquery-3.2.14.tgz"
     },
     "@types/node": {
