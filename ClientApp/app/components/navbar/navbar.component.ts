@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import * as bootbox from 'bootbox';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'navbar',
@@ -8,26 +9,35 @@ import * as bootbox from 'bootbox';
 })
 export class NavbarComponent implements OnInit {
 
-  public status: {isopen: boolean} = {isopen: false};
+  @ViewChild('dropdowntoggle') dropdowntoggle: ElementRef;
+  
+  private status: {isopen: boolean} = {isopen: false};
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public change(value: boolean): void {
-    this.status.isopen = value;
+  toggle() {
+    if (this.status.isopen == true) {
+      $(this.dropdowntoggle.nativeElement).removeClass("open");
+    }
+    else if (this.status.isopen == false)
+    {
+      $(this.dropdowntoggle.nativeElement).addClass("open");
+    }
+    this.status.isopen = !this.status.isopen;
   }
 
   public onMouseover(){
     if(this.status.isopen == false){
-      this.status.isopen = true;
+      this.toggle();
     }
   }
 
   public onMouseleave(){
     if(this.status.isopen == true){
-      this.status.isopen = false;
+      this.toggle();
     }
   }
 
