@@ -1,3 +1,4 @@
+import { VerseService } from './services/verse.service';
 import { VerseParserService } from './services/verse-parser.service';
 import { CounterComponent } from './components/counter/counter.component';
 import { NavFooterComponent } from './components/nav-footer/nav-footer.component';
@@ -40,7 +41,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
     ],
     providers: [
         StudySheetService,
-        VerseParserService
+        VerseParserService,
+        VerseService
     ]
 })
 export class AppModuleShared {
