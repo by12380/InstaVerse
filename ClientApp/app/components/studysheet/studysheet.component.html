@@ -20,5 +20,5 @@
   <br />
 </div>
 <div id="MainContainer">
-        <verse-container *ngFor="let verses of verseGroupList" [verseGroup]="verses" [isDeleteMode]="isDeleteMode" class="verse-container-margin"></verse-container>
+        <verse-container *ngFor="let verseGroup of verseGroups" [verseGroup]="verseGroup" [isDeleteMode]="isDeleteMode" class="verse-container-margin"></verse-container>
 </div>

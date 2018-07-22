@@ -1,3 +1,4 @@
+import { VerseGroup } from './../../models/VerseGroup';
 import { fade } from './../../animations/fade.animation';
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,15 +13,14 @@ import * as $ from 'jquery';
 export class StudysheetComponent implements OnInit {
 
   isDeleteMode: boolean;
-  verseGroupList: string[][] = [];
+  verseGroups: VerseGroup[] = [];
 
   constructor(private studySheetService: StudySheetService) {
   }
 
   ngOnInit() {
-    // Todo: Fix issue after studySheetService is updated
-    // this.studySheetService.currentMessage
-    //   .subscribe(verseGroupList => this.verseGroupList = verseGroupList);
+    this.studySheetService.getVerseGroups
+      .subscribe(verseGroups => this.verseGroups = verseGroups);
     
     this.studySheetService.isDeleteMode
       .subscribe(isDeleteMode => this.isDeleteMode = isDeleteMode);
