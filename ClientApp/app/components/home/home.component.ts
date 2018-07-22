@@ -1,6 +1,6 @@
-import { VerseParserService } from './../../services/verse-parser.service';
+import { VerseGroup } from './../../models/VerseGroup';
+import { VerseService } from './../../services/verse.service';
 import { trigger, style, animate, transition } from '@angular/animations';
-import { StudySheetService } from './../../services/studysheet.service';
 import { Component, AfterViewInit } from '@angular/core';
 import { fade } from '../../animations/fade.animation';
 import * as $ from 'jquery';
@@ -13,18 +13,19 @@ import * as $ from 'jquery';
 })
 export class HomeComponent {
 
-    public verses: string[] = [];
+    public verseGroup: VerseGroup = <VerseGroup>{};
     public errorStrings: string[] = [];
 
-    constructor(private verseParserService: VerseParserService) { }
+    constructor(private verseService: VerseService) { }
 
     ngOnInit() {
-        this.verseParserService.latestVerses.subscribe(verses => this.verses = verses);
-        this.verseParserService.latestErrors.subscribe(errorStrings => this.errorStrings = errorStrings);
+        this.verseService.getVerseGroup.subscribe( verseGroup => {
+            this.verseGroup = verseGroup;
+        })
     }
 
-    fetch(str: string){
-        this.verseParserService.fetchVerses(str);
+    fetch(query: string){
+        this.verseService.fetch(query);
     }
 
     ngAfterViewInit() {
