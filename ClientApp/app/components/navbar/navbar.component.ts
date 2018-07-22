@@ -65,21 +65,6 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  public openFootnote() {
-    var content =
-    `<div class="modal-font-style">
-      <p>Footnotes are viewed via links redirected back to their source locations from http://online.recoveryversion.bible/ </p>
-      <br>
-      <strong><p>*Footnotes are only available for the New Testament Bible</p></strong>
-    </div>`;
-
-    bootbox.dialog({
-      title: ' ',
-      message: content,
-      size: 'small'
-    });
-  }
-
   public openAbout() {
     var content =
     `<div class="modal-font-style">
