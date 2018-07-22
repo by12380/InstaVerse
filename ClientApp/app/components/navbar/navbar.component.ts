@@ -68,7 +68,7 @@ export class NavbarComponent implements OnInit {
   public openAbout() {
     var content =
     `<div class="modal-font-style">
-      <p>All requested verses are parsed from the Recovery Version Bible from http://online.recoveryversion.bible/. </p>
+      <p>All verses are provided by http://api.lsm.org </p>
       <br>
       <strong><p>*All rights belong to Living Stream Ministry*</p></strong>
     </div>`;
