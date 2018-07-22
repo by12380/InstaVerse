@@ -39,8 +39,7 @@ export class VerseContainerComponent implements OnInit {
       callback:
       function(result){
         if(result){
-          // Todo: Fix parameter type for .removeVerseGroup() and enable it.
-          // studySheetService.removeVerseGroup(verseGroup);
+          studySheetService.removeVerseGroup(verseGroup);
         }
       }
     })
