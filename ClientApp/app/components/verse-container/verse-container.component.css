@@ -27,3 +27,8 @@
 .red-border {
     border: red solid 1px;
 }
+
+.verse-reference {
+    font-weight: bold;
+    padding-right: 8px;
+}

@@ -6,7 +6,9 @@
   </div>
   <p class="clear-float"></p>
   <div>
-      <div *ngFor="let v of verseGroup" [innerHtml]="v"></div>
+      <div *ngFor="let verse of verseGroup.verses">
+        <p><span class="verse-reference">{{verse.ref}}</span>{{verse.text}}</p>
+      </div>
   </div>
   <div *ngIf="isDeleteMode" id="containerBorder" class="red-border" @fade></div>
 </div>

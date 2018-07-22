@@ -1,7 +1,9 @@
+import { VerseGroup } from './../../models/VerseGroup';
 import { fade } from './../../animations/fade.animation';
 import { StudySheetService } from './../../services/studysheet.service';
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as bootbox from 'bootbox';
+import { Verse } from '../../models/Verse';
 
 @Component({
   selector: 'verse-container',
@@ -11,7 +13,7 @@ import * as bootbox from 'bootbox';
 })
 export class VerseContainerComponent implements OnInit {
 
-  @Input() verseGroup: string[];
+  @Input() verseGroup: VerseGroup;
 
   @Input() isDeleteMode : boolean;
 
@@ -25,10 +27,10 @@ export class VerseContainerComponent implements OnInit {
     var studySheetService = this.studySheetService;
     var verseGroup = this.verseGroup;
 
-    if (verseGroup.length == 1) {
+    if (verseGroup.verses.length == 1) {
       confirmMessage = 'Are you sure you want to delete this verse?';
     } else {
-      confirmMessage = 'Are you sure you want to delete these ' + verseGroup.length + ' verses?';
+      confirmMessage = 'Are you sure you want to delete these ' + verseGroup.verses.length + ' verses?';
     }
 
     bootbox.confirm({
@@ -37,7 +39,8 @@ export class VerseContainerComponent implements OnInit {
       callback:
       function(result){
         if(result){
-          studySheetService.removeVerseGroup(verseGroup);
+          // Todo: Fix parameter type for .removeVerseGroup() and enable it.
+          // studySheetService.removeVerseGroup(verseGroup);
         }
       }
     })
