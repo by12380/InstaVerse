@@ -18,8 +18,9 @@ export class StudysheetComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.studySheetService.currentMessage
-      .subscribe(verseGroupList => this.verseGroupList = verseGroupList);
+    // Todo: Fix issue after studySheetService is updated
+    // this.studySheetService.currentMessage
+    //   .subscribe(verseGroupList => this.verseGroupList = verseGroupList);
     
     this.studySheetService.isDeleteMode
       .subscribe(isDeleteMode => this.isDeleteMode = isDeleteMode);

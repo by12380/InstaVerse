@@ -1,12 +1,13 @@
+import { VerseGroup } from './../models/VerseGroup';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class StudySheetService {
 
-    private verseGroupList: string[][] = [];
-    private verseGroupListSource = new BehaviorSubject<string[][]>(this.verseGroupList);
-    public currentMessage = this.verseGroupListSource.asObservable();
+    private verseGroups: VerseGroup[] = [];
+    private verseGroupListSource = new BehaviorSubject<VerseGroup[]>(this.verseGroups);
+    public getVerseGroups = this.verseGroupListSource.asObservable();
 
     private _isDeleteMode : boolean = false;
     private isDeleteModeSource = new BehaviorSubject<boolean>(this._isDeleteMode);
@@ -14,14 +15,14 @@ export class StudySheetService {
 
     constructor() { }
 
-    addVerseGroup(verseGroup: string[]) {
-        this.verseGroupList.push(verseGroup);
-        this.verseGroupListSource.next(this.verseGroupList);
+    addVerseGroup(verseGroup: VerseGroup) {
+        this.verseGroups.push(verseGroup);
+        this.verseGroupListSource.next(this.verseGroups);
     }
 
-    removeVerseGroup(verseGroup: string[]){
-        let index = this.verseGroupList.indexOf(verseGroup);
-        this.verseGroupList.splice(index, 1);
+    removeVerseGroup(verseGroup: VerseGroup){
+        let index = this.verseGroups.indexOf(verseGroup);
+        this.verseGroups.splice(index, 1);
     }
 
     activateDeleteMode() {
