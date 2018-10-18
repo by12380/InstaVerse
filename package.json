@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "dotnet watch run",
+    "start": "ASPNETCORE_ENVIRONMENT=Development dotnet watch run",
     "test": "karma start ClientApp/test/karma.conf.js",
     "webpack-vendor": "webpack --config webpack.config.vendor.js",
     "webpack-config": "webpack --config webpack.config.js"
