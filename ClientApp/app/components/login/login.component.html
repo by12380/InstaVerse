@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div *ngIf="auth.user$ | async as user; then loggedIn else loggedOut"></div>
+  <ng-template #loggedIn>
+    <button  class="btn btn-primary" (click)="logout()">Logout</button>
+  </ng-template>
+  <ng-template #loggedOut>
+    <button  class="btn btn-primary" (click)="login()">Login with Google</button>
+  </ng-template>
+</div>
