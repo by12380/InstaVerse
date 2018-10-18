@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "start": "dotnet watch run",
     "test": "karma start ClientApp/test/karma.conf.js",
     "webpack-vendor": "webpack --config webpack.config.vendor.js",
     "webpack-config": "webpack --config webpack.config.js"
@@ -24,6 +25,7 @@
     "@types/jquery": "https://registry.npmjs.org/@types/jquery/-/jquery-3.2.14.tgz",
     "@types/webpack-env": "1.13.0",
     "angular2-template-loader": "0.6.2",
+    "angularfire2": "^5.0.2",
     "aspnet-prerendering": "^3.0.1",
     "aspnet-webpack": "^2.0.1",
     "awesome-typescript-loader": "3.2.1",
@@ -36,6 +38,7 @@
     "expose-loader": "0.7.3",
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
+    "firebase": "^5.5.4",
     "html-loader": "0.4.5",
     "isomorphic-fetch": "2.2.1",
     "jquery": "3.2.1",
