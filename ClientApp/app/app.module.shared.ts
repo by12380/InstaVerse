@@ -1,3 +1,4 @@
+import { FacebookSigninButtonComponent } from './components/facebook-signin-button/facebook-signin-button.component';
 import { VerseService } from './services/verse.service';
 import { VerseParserService } from './services/verse-parser.service';
 import { CounterComponent } from './components/counter/counter.component';
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
+import { GoogleSigninButtonComponent } from './components/google-signin-button/google-signin-button.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -31,7 +33,9 @@ import { environment } from './environments/environment';
         StudysheetComponent,
         VerseContainerComponent,
         CounterComponent,
-        LoginComponent
+        LoginComponent,
+        GoogleSigninButtonComponent,
+        FacebookSigninButtonComponent
     ],
     imports: [
         CommonModule,
