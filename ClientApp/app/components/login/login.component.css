@@ -1,0 +1,14 @@
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.login-btn-container {
+    display: inline-block;
+    box-shadow: 0 0px 5px 0 #cccccc;
+    min-height: 300px;
+    padding: 40px;
+}
