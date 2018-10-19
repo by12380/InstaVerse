@@ -11,8 +11,12 @@ export class AuthService {
         this.user$ = afAuth.authState;
     }
 
-    login() {
+    loginWithGoogle() {
         this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    }
+
+    loginWithFacebook() {
+        this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
     }
 
     logout() {
