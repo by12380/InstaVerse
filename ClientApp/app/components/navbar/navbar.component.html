@@ -11,10 +11,19 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" style="padding-right:5px;">
                 <li routerLinkActive="hidden"><a routerLink="home">Home</a></li>
-                <ng-template #loggedOut>
-                    <li routerLinkActive="hidden"><a routerLink="login">Login</a></li>
-                </ng-template>
-                <li class="dropdown" *ngIf="auth.user$ | async as user; else loggedOut">
+                <li routerLinkActive="hidden" *ngIf="!(auth.user$ | async)"><a routerLink="login">Login</a></li>
+                <li #dropdowntoggle
+                    class="dropdown"
+                    (mouseover)="onMouseover()"
+                    (mouseleave)="onMouseleave()"
+                    >
+                    <a  class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">Info</a>
+                    <ul class="dropdown-menu">
+                    <li><a (click)="openVerseRef()">Verse Reference Examples</a></li>
+                    <li><a (click)="openAbout()">About</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" *ngIf="auth.user$ | async as user">
                     <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">
                         <img class="profile-pic" [src]="user.photoURL" alt="profile">
                     </a>
@@ -22,17 +31,6 @@
                         <li><a (click)="logout()">Logout</a></li>
                     </ul>
                 </li>
-                <li #dropdowntoggle
-                    class="dropdown"
-                    (mouseover)="onMouseover()"
-                    (mouseleave)="onMouseleave()"
-                    >
-                 <a  class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">Info</a>
-                 <ul class="dropdown-menu">
-                   <li><a (click)="openVerseRef()">Verse Reference Examples</a></li>
-                   <li><a (click)="openAbout()">About</a></li>
-                 </ul>
-               </li>
              </ul>
         </div>
     </div>
