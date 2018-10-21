@@ -24,3 +24,10 @@
     border-color: transparent;
     color: #376bbf !important;
 }
+
+.profile-pic {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
