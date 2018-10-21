@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import * as bootbox from 'bootbox';
 import * as $ from 'jquery';
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
   
   private status: {isopen: boolean} = {isopen: false};
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -78,6 +79,10 @@ export class NavbarComponent implements OnInit {
       message: content,
       size: 'small'
     });
+  }
+
+  public logout() {
+    this.auth.logout();
   }
 
 }
