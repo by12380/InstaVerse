@@ -6,7 +6,8 @@
     "start": "ASPNETCORE_ENVIRONMENT=Development dotnet watch run",
     "test": "karma start ClientApp/test/karma.conf.js",
     "webpack-vendor": "webpack --config webpack.config.vendor.js",
-    "webpack-config": "webpack --config webpack.config.js"
+    "webpack-config": "webpack --config webpack.config.js",
+    "restart": "npm run webpack-vendor && npm run webpack-config && npm run start"
   },
   "dependencies": {
     "@angular/animations": "^4.2.5",
