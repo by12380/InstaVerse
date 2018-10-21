@@ -1,5 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,21 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   loginWithGoogle() {
-    this.auth.loginWithGoogle();
+    this.auth.loginWithGoogle()
+      .then(() => {
+        this.router.navigate(['/home']);
+      })
+      .catch((e)=> {
+        console.error(e);
+      });
   }
 
   loginWithFacebook() {
-    this.auth.loginWithFacebook();
-  }
-
-  logout() {
-    this.auth.logout();
+    this.auth.loginWithFacebook()
+      .then(() => {
+        this.router.navigate(['/home']);
+      })
+      .catch((e)=> {
+        console.error(e);
+      });
   }
 
 }
