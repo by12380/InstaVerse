@@ -15,11 +15,34 @@ export class VerseService {
     private verseGroupSource = new BehaviorSubject<VerseGroup>(this.verseGroup);
     public getVerseGroup = this.verseGroupSource.asObservable();
 
+    private erros: any[] = []
+    private errorsSource = new BehaviorSubject<any[]>(this.erros);
+    public getErrors = this.errorsSource.asObservable();
+
     public fetch(query: string) {
         this.http
             .get(this.API_URL, { params: { Out: "json", String: query }})
             .map(res => res.json() as VerseGroup)
-            .subscribe(verseGroup => this.verseGroupSource.next(verseGroup));
+            .subscribe(
+                (verseGroup) => { this._fiter(verseGroup) });
+    }
+
+    private _fiter(rawVerseGroup: VerseGroup) {
+        const verseGroup: VerseGroup = <VerseGroup>{};
+        const errors: any[] = [];
+
+        verseGroup.verses = [];
+
+        rawVerseGroup.verses.forEach((verse) => {
+            if (verse.text.includes('No such')) {
+                errors.push(verse);
+            } else {
+                verseGroup.verses.push(verse);
+            }
+        })
+
+        this.verseGroupSource.next(verseGroup);
+        this.errorsSource.next(errors);
     }
 
 }

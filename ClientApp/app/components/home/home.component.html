@@ -6,13 +6,12 @@
         <div class="col-sm-3 "></div>
         <div class="col-sm-6 text-center">
             <div class="form-group">
-                <textarea #searchBox class="form-control txt-area" rows="5" id="comment"></textarea>
+                <textarea #searchBox class="form-control txt-area" rows="5" id="comment" placeholder="Gen 1:26; Ezek 1:26; John 3:16,18-20;"></textarea>
             </div>
             <br />
-            <div *ngIf="errorStrings?.length > 0" class="input-error">
-                    Input Errors:
-                    <span *ngFor="let e of errorStrings">{{e}}; </span>
-                </div>
+            <div *ngIf="errors?.length > 0" class="input-error">
+                <p *ngFor="let e of errors">{{e.ref}}: {{e.text}}</p>
+            </div>
             <br />         
             <div class="row">
                 <div class="col-sm-4"></div>
