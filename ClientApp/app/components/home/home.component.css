@@ -25,3 +25,8 @@
     text-align: center;
     color: red;
 }
+
+.srch-block .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+}
