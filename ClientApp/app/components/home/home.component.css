@@ -26,6 +26,10 @@
     color: red;
 }
 
+.input-error p {
+    margin: 0;
+}
+
 .srch-block .btn {
     padding-left: 20px;
     padding-right: 20px;

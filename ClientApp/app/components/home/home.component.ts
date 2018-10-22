@@ -12,13 +12,17 @@ import { fade } from '../../animations/fade.animation';
 export class HomeComponent {
 
     public verseGroup: VerseGroup = <VerseGroup>{};
-    public errorStrings: string[] = [];
+    public errors: any[] = [];
 
     constructor(private verseService: VerseService) { }
 
     ngOnInit() {
         this.verseService.getVerseGroup.subscribe( verseGroup => {
             this.verseGroup = verseGroup;
+        })
+
+        this.verseService.getErrors.subscribe( errors => {
+            this.errors = errors;
         })
     }
 
