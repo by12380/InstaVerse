@@ -4,7 +4,7 @@ A personal Bible study tool to search and save Bible verses in bulk. The app use
 
 ## Demo
 
-* [Live Demo](https://instaver.se)
+* [Live App](https://instaver.se)
 
 ## Screenshots
 
