@@ -15,7 +15,7 @@ Search/Home Page:
 Study Sheet Page  
 (Saved Bible verses in user-authenticated account):
 
-<img src="https://github.com/by12380/WhatsVocab/blob/master/screenshots/studybook.jpg" width="600px"/>
+<img src="https://github.com/by12380/InstaVerse/blob/master/screenshots/studybook.jpg" width="600px"/>
 
 ## Built With
 
