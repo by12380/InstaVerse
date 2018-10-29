@@ -7,7 +7,7 @@ import { Verse } from '../models/verse';
 @Injectable()
 export class VerseService {
 
-    private readonly API_URL = "http://api.lsm.org/recver.php";
+    private readonly API_URL = "https://api.lsm.org/recver.php";
 
     constructor(private http: Http) { }
 
