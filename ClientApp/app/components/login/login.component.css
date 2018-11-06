@@ -12,3 +12,13 @@
     min-height: 300px;
     padding: 40px;
 }
+
+.demo-info {
+    margin-top: 50px;
+    font-size: 13px;
+    color: #5a5a5a;
+}
+
+.demo-info p {
+    margin: 0;
+}
